@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  S3AppBucket:
+    DeletionPolicy: Retain
+    Type: "AWS::S3::Bucket"
+    Properties:
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        ErrorDocument: index.html
+        IndexDocument: index.html
+  BucketPolicyApp:
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      Bucket: !Ref S3AppBucket
+      PolicyDocument:
+        Statement:
+          -
+            Sid: "ABC123"
+            Action:
+              - "s3:GetObject"
+            Effect: Allow
+            Resource: !Join ["", ["arn:aws:s3:::", !Ref S3AppBucket, "/*"]]
+            Principal:
+              AWS:
+                - "*"
+Outputs:
+  appbucket:
+    Description: Shared Infrastructure App Bucket
+    Value: !GetAtt S3AppBucket.WebsiteURL
+    Export: # added to export
+      Name: sharedinf-appbucket
+  
