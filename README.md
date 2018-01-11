@@ -28,7 +28,7 @@ CloudFormationTemplate!
 > - Allows for the input of Subnet CIDR. 
 > - Allows for the selection of Application version to deploy, use the format as see in the [**App***.zip] and [**Test***.zip] files. * Specifies an integer version number.
 > - Allows for the input of certificate from AWS ACM.
-> - Allows for the input of **MinSize**, **MaxSize** and **Desired** size.
+> - Allows for the input of **MinSize**, **MaxSize** and **Desired** size for auto scaling group.
 > - Can be deployed in any region, does auto AMI selection.
 > - For logs, navigate to **/var/log** and check the **cfn-init** logs.  
 > - Monitoring with CloudWatch (Uses scaling policies to scale up or scale down).
