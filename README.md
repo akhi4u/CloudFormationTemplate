@@ -2,7 +2,7 @@ CloudFormationTemplate!
 ===================
 
 
- <i class="icon-cog"></i> **Deploys a ACM-Signed Web Server.**
+ <i class="icon-cog"></i> **Deploys an ACM-Signed Web Server.**
 
 ----------
 
